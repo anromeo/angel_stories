@@ -48,7 +48,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<%= story.description %>
+						<%= simple_format(story.description) %>
 						<% if halos > 99 %>
 							<div class="angel fltrt">
 								<%= image_tag("/assets/angel2.png",
