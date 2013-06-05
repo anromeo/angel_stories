@@ -5,9 +5,8 @@ gem 'dynamic_form', '1.1.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
-
+gem 'pg', group: :production
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -40,7 +39,6 @@ gem 'therubyracer'
 
 # To use testing
 gem 'zurb-foundation', '~>4.0.0'
-gem 'spork', '~> 1.0rc'
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
@@ -48,6 +46,7 @@ group :test, :development do
 	gem 'pry-doc'
 	gem 'pry-debugger'
 	gem 'launchy'
+  gem 'sqlite3'
 end
 
 group :test do

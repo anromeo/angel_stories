@@ -85,6 +85,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.5)
     nokogiri (1.5.9)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -151,7 +152,6 @@ GEM
       rubyzip
       websocket (~> 1.0.4)
     slop (3.4.5)
-    spork (1.0.0rc3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -189,13 +189,13 @@ DEPENDENCIES
   fancybox-rails
   jquery-rails
   launchy
+  pg
   pry-debugger
   pry-doc
   pry-rails
   rails (= 3.2.13)
   rspec-rails (~> 2.11)
   sass-rails (~> 3.2.3)
-  spork (~> 1.0rc)
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
