@@ -1,0 +1,8 @@
+== Angel Stories
+
+This app was created to recognize good people in the world.
+
+With this app, you can:
+1. Create stories recognizing people for the good things they've done in your life.
+2. Read about other people doing good deeds.
+3. Vote for stories with halo points and help people earn an angel.

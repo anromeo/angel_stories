@@ -1,0 +1,88 @@
+<% ip = request.remote_ip %>
+<div class="introOuterDiv">
+	<div class="introInnerDiv">
+		We run into them every so often.  They look and act like
+		regular people, but suddenly, something happens and they
+		act, going out of their way to help you.  Some of them
+		go so far as to change your life.  They are the heroes
+		and heroines of our lives, like angels put on this Earth.
+		Unfortunately, these people are almost hardly ever
+		recognized.  This site is dedicated to celebrating
+		the acts of these amazing people.
+	</div>
+	<p class="buttonsubmit">
+		Post your story or give
+		<span class="storyhalopoints">
+			Halo Points
+		</span>
+		to the stories listed below.
+	</p>
+	<p class="buttonsubmit">
+		<%= link_to "+ Angel Story", new_story_path, {:class => "fancybox small button success round"} %>
+	</p>
+</div>
+<div id="stream">
+  <% flash.each do |key, value| %>
+    <div class="flash" id="<%= key %>">
+      <%= value %>
+  	</div>
+  <% end %>
+	<% @stories.each do |story| %>
+		<% halos = story.points.count %>
+		<div class="storydiv">
+			<table class="storytable" >
+				<tr>
+					<th colspan="2" class="storytablebackground" align="left">
+						<%= story.title %>
+					</th>
+				</tr>
+				<tr class="storyauthor">
+					<td>
+						<%= "From " %>
+						<%= story.author.presence || "Anonymous" %>
+					</td>
+					<td>
+						<%= "To " %>
+						<%= story.angel.presence || "Anonymous" %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<%= story.description %>
+						<% if halos > 99 %>
+							<div class="angel fltrt">
+								<%= image_tag("/assets/angel2.png",
+															width: "100px",
+															height: "auto") %>
+							</div>
+						<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="storyhalopoints">
+			    	<div class="halo-points">
+			    		<% foundpoint = story.points.where("ip=?", ip) %>
+			    		<% if foundpoint.present? %>
+			    			<% src = "/assets/halo-right.png" %>
+			    		<% else %>
+			    			<% src = "/assets/halo-left-empty.png" %>
+			    		<% end %>
+			    		<%= link_to
+			    					image_tag(src,
+			    										id: story.id,
+			    										class: "add_point",
+			    										width: "25px",
+			    										height: "auto") %>
+				    	<span class="points">
+					   		<%= halos if halos > 0 %>
+					   	</span>
+					   	Halo Points
+				   	</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<% end %>
+  </div>
+<article>
+</article>

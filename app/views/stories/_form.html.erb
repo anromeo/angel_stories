@@ -1,0 +1,49 @@
+<% flash.each do |key, value| %>
+	<div class="flash" id="<%= key %>">
+  	<%= value %>
+  </div>
+<% end %>
+<%= form_for @story do |f| %>
+	<table>
+		<tr>
+			<td colspan="2">
+				Title
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<%= f.text_field :title, {id: "title"} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Author
+			</td>
+			<td>
+				Angel
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.text_field :author, {id: "author" } %>
+			</td>
+			<td>
+				<%= f.text_field :angel, {id: "angel"} %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				Your Story
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<%= f.text_area :description, {id: "story"} %>
+			</td>
+		<tr>
+			<td colspan="2">
+				<%= f.submit "+ Angel Story" , {:class => "small button success round" } %>
+			</td>
+		</tr>
+	</table>
+<% end %>

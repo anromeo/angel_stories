@@ -1,0 +1,95 @@
+// Place all the styles related to the stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body{
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+header{
+
+}
+footer{
+  clear: both;
+}
+.wrapper{
+  min-height: 100%;
+  max-width: 1200px;
+  min-width: 600px;
+  width: 90%;
+  margin: 0 auto 0 auto;
+  border-left: solid 1px #CCC;
+  border-right: solid 1px #CCC;
+}
+
+article{
+  float: left;
+  margin: 0 10px 0 10px;
+  max-width: 300px;
+  min-width: 150px;
+  width: 25%;
+}
+
+#stream{
+  max-width: 900px;
+  min-width: 450px;
+  width: 75%;
+  margin: 0;
+  float: left;
+}
+.fltrt{
+  float: right;
+  margin: 5px;
+}
+
+.fltlft{
+  float: left;
+  margin: 5px;
+}
+
+.storydiv{
+  border-bottom: solid 1px #CCC;
+  margin: 15px 15px 15px 15px;
+}
+
+.storydiv:last-child{
+  border-bottom: none;
+}
+table.storytable{
+  width: 100%;
+  max-width: 600px;
+  border: 0;
+  background: #FFF;
+  font-family: "Bodoni MT", Didot, "Didot LT STD",
+    "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.flash{
+  background-color: #00FF00;
+  color: #000000;
+  padding: 5px;
+  margin: auto;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+}
+.storyauthor{
+  font-style: italic;
+}
+.storyhalopoints{
+  color: #DAA520;
+}
+.introOuterDiv{
+  margin: 10px auto 10px auto;
+  width: 75%;
+  text-align: justify;
+}
+.introInnerDiv{
+  width: 75%;
+  margin: 0 auto 20px auto;
+  font-family: Baskerville, "Baskerville Old Face",
+    "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.buttonsubmit{
+  text-align: center;
+}
