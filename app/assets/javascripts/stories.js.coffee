@@ -3,6 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(->
+  newWidth = $('.wrapper').width()
+
+  $('#headerImage').width(newWidth)
+
 	$('.add_point').click((event)->
 
     $this = $(this)
@@ -21,5 +25,4 @@ $(->
   )
 
   $('.fancybox').fancybox()
-
 )
