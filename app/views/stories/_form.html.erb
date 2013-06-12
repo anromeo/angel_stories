@@ -3,8 +3,8 @@
   	<%= value %>
   </div>
 <% end %>
-<%= form_for @story do |f| %>
-	<table>
+<%= form_for @story, remote: true do |f| %>
+	<table class="formTable">
 		<tr>
 			<td colspan="2">
 				Title

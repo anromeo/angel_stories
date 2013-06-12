@@ -1,0 +1,54 @@
+    <% halos = story.points.count %>
+    <div class="storydiv">
+      <table class="storytable" >
+        <tr>
+          <th colspan="2" class="storytablebackground" align="left">
+            <%= story.title %>
+          </th>
+        </tr>
+        <tr class="storyauthor">
+          <td>
+            <%= "From " %>
+            <%= story.author.presence || "Anonymous" %>
+          </td>
+          <td>
+            <%= "To " %>
+            <%= story.angel.presence || "Anonymous" %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= simple_format(story.description) %>
+            <% if halos > 99 %>
+              <div class="angel fltrt">
+                <%= image_tag("/assets/angel2.png",
+                              width: "100px",
+                              height: "auto") %>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="storyhalopoints">
+            <div class="halo-points">
+              <% foundpoint = story.points.where("ip=?", @ip) %>
+              <% if foundpoint.present? %>
+                <% src = "/assets/halo-right.png" %>
+              <% else %>
+                <% src = "/assets/halo-left-empty.png" %>
+              <% end %>
+              <%= link_to
+                    image_tag(src,
+                              id: story.id,
+                              class: "add_point",
+                              width: "25px",
+                              height: "auto") %>
+              <span class="points">
+                <%= halos if halos > 0 %>
+              </span>
+              Halo Points
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>

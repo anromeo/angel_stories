@@ -47,6 +47,7 @@ group :test, :development do
 	gem 'pry-debugger'
 	gem 'launchy'
   gem 'sqlite3'
+  gem 'better_errors'
 end
 
 group :test do

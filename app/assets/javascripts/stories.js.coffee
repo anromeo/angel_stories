@@ -7,7 +7,7 @@ $(->
 
   $('#headerImage').width(newWidth)
 
-	$('.add_point').click((event)->
+	$(document).on 'click','.add_point', {}, (event)->
 
     $this = $(this)
 
@@ -22,7 +22,7 @@ $(->
       src="/assets/angel2.png" width="100px">')
     $.get url, (data)->
       $this.parent().children('.points').text data
-  )
 
   $('.fancybox').fancybox()
+
 )

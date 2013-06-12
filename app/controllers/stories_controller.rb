@@ -11,12 +11,14 @@ class StoriesController < ApplicationController
 	def create
 		@story = Story.new(params[:story])
 
-		if @story.save
-			flash[:notice] = "Thank you for the story!"
-			redirect_to root_path
-		else
-			flash[:notice] = "Please, enter a story."
-			render :action => "new"
+		respond_to do |format|
+			if @story.save
+				format.html { redirect_to root_path, notice: "Thank you for the story!" }
+				format.js
+			else
+				flash[:notice] = "Please, enter a story."
+				render :action => "new"
+			end
 		end
 	end
 end
