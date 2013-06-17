@@ -3,13 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(->
-  newWidth = $('.wrapper').width()
 
-  $('#headerImage').width(newWidth)
+  $(document).on 'change', '#headerImage', ->
+    newWidth = $('.wrapper').width()
+    $(this).width(newWidth)
 
-	$(document).on 'click','.add_point', {}, (event)->
+	$('#stream').on 'click','.add_point', ->
 
-    $this = $(this)
+    $this = $(@)
 
     $this.attr("src",
       "/assets/halo-left.png").attr("src",
@@ -18,10 +19,10 @@ $(->
     $id = $this.attr('id')
     url = "/stories/" + $id + "/points/new"
     event.preventDefault()
-    $this.parent('table').append('<img alt="Angel2" height="auto"
-      src="/assets/angel2.png" width="100px">')
     $.get url, (data)->
       $this.parent().children('.points').text data
+      $this.parent('div').append('<img alt="Angel2" height="auto"
+        src="/assets/angel2.png" width="100px">')
 
   $('.fancybox').fancybox()
 
