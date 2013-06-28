@@ -21,8 +21,7 @@ $(->
     event.preventDefault()
     $.get url, (data)->
       $this.parent().children('.points').text data
-      $this.parent('div').append('<img alt="Angel2" height="auto"
-        src="/assets/angel2.png" width="100px">')
+#      $this.parent('div').append('<img alt="Angel2" height="auto" src="/assets/angel2.png" width="100px">')
 
   $('.fancybox').fancybox()
 
